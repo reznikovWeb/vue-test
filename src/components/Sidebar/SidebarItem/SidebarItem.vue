@@ -1,8 +1,11 @@
 <template>
   <li>
-    <router-link class="link" :to="item.to">
+    <router-link
+      :class="{ link: true, isClosed: $store.state.isClosed }"
+      :to="item.to"
+    >
       <Icon :name="item.icon" class="img" />
-      <span>{{ item.title }}</span>
+      <span class="title">{{ item.title }}</span>
     </router-link>
   </li>
 </template>
@@ -29,7 +32,7 @@ export default {
   width: 100%;
   text-align: left;
   font-size: var(--fz-m);
-  padding: 10px 10px;
+  padding: 10px 15px;
   transition: background-color 0.2s;
   text-decoration: none;
 
@@ -38,12 +41,25 @@ export default {
   }
 }
 
+.link.isClosed {
+  .title {
+    display: none;
+  }
+}
+
+.title {
+  margin-left: 15px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .img {
   width: 25px;
   height: 25px;
   object-fit: cover;
-  margin-right: 15px;
   fill: white;
+  flex-shrink: 0;
 }
 
 .router-link-exact-active {

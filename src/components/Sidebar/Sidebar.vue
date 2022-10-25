@@ -1,5 +1,5 @@
 <template>
-  <ul class="sidebar">
+  <ul :class="{ sidebar: true, sidebarIsClosed: $store.state.isClosed }">
     <SidebarItem v-for="menuItem in menu" :item="menuItem" :key="menuItem.id" />
   </ul>
 </template>
@@ -28,5 +28,14 @@ export default {
 <style lang="scss" scoped>
 .sidebar {
   grid-area: sidebar;
+  width: var(--sidebar-width);
+  transition: width 0.2s;
+}
+
+.sidebar.sidebarIsClosed {
+  width: var(--sidebar-width-collapsed);
+}
+
+.sidebarIsOpen {
 }
 </style>

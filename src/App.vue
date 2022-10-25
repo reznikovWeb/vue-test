@@ -21,6 +21,12 @@ export default {
     Navbar,
     MainPage,
   },
+  mounted() {
+    if (localStorage.getItem("isClosed")) {
+      const isClosed = localStorage.getItem("isClosed") === `true`;
+      this.$store.commit("setIsClosed", { isClosed });
+    }
+  },
 };
 </script>
 
@@ -34,11 +40,17 @@ export default {
     "sidebar content";
   height: 100vh;
   grid-template-rows: auto 1fr;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: auto 1fr;
+  overflow: hidden;
 }
 
 .content {
   grid-area: content;
   background-color: var(--bg-secondary);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+  padding: 0 20px;
 }
 </style>
