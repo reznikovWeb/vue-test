@@ -39,6 +39,10 @@ export default {
 
   &__btn {
     margin-right: 15px;
+
+    @media (max-width: 500px) {
+      display: none;
+    }
   }
 
   &__iconBtn {
