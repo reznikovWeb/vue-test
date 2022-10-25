@@ -1,9 +1,9 @@
 <template>
   <li>
-    <button class="btn">
+    <router-link class="link" :to="item.to">
       <Icon :name="item.icon" class="img" />
       <span>{{ item.title }}</span>
-    </button>
+    </router-link>
   </li>
 </template>
 
@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.btn {
+.link {
   display: flex;
   align-items: center;
   background-color: transparent;
@@ -31,6 +31,7 @@ export default {
   font-size: var(--fz-m);
   padding: 10px 10px;
   transition: background-color 0.2s;
+  text-decoration: none;
 
   &:hover {
     background-color: rgba(#ffffff, 0.2);
@@ -43,5 +44,9 @@ export default {
   object-fit: cover;
   margin-right: 15px;
   fill: white;
+}
+
+.router-link-exact-active {
+  background-color: rgba(#ffffff, 0.2);
 }
 </style>

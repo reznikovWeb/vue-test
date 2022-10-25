@@ -12,7 +12,8 @@
     "node-sass": "^7.0.3",
     "sass": "^1.55.0",
     "sass-loader": "^13.1.0",
-    "vue": "^2.7.1"
+    "vue": "^2.7.1",
+    "vue-router": "^3.6.5"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

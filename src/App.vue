@@ -2,14 +2,16 @@
   <div class="app">
     <Header />
     <Navbar />
-    <MainPage />
+    <div class="content">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <script>
 import Header from "@/components/Header/Header";
 import Navbar from "@/components/Sidebar/Sidebar";
-import MainPage from "@/pages/MainPage/MainPage";
+import MainPage from "@/pages/Main/Main";
 import "./styles/index.scss";
 
 export default {
@@ -33,5 +35,10 @@ export default {
   height: 100vh;
   grid-template-rows: auto 1fr;
   grid-template-columns: 200px 1fr;
+}
+
+.content {
+  grid-area: content;
+  background-color: var(--bg-secondary);
 }
 </style>
