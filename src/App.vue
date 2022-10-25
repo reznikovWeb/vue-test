@@ -2,6 +2,7 @@
   <div class="app">
     <Header />
     <Navbar />
+    <Modal />
     <div class="content">
       <router-view></router-view>
     </div>
@@ -11,6 +12,7 @@
 <script>
 import Header from "@/components/Header/Header";
 import Navbar from "@/components/Sidebar/Sidebar";
+import Modal from "@/components/Modal/Modal";
 import MainPage from "@/pages/Main/Main";
 import "./styles/index.scss";
 
@@ -20,6 +22,7 @@ export default {
     Header,
     Navbar,
     MainPage,
+    Modal,
   },
   mounted() {
     if (localStorage.getItem("isClosed")) {
@@ -51,6 +54,24 @@ export default {
   flex-direction: column;
   height: 100%;
   overflow-y: auto;
-  padding: 0 20px;
+  padding: 20px 20px;
+}
+
+::-webkit-scrollbar {
+  width: 13px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--bg-grey);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--bg-grey-light);
+  border-radius: 10px;
+
+  &:hover {
+    background-color: var(--color-primary);
+  }
 }
 </style>

@@ -1,27 +1,15 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import { tableModule } from "@/store/tableModule";
+import { modalModule } from "@/store/modalModule";
+import { sidebarModule } from "@/store/sidebarModule";
+import { pagesModule } from "@/store/pagesModule";
 Vue.use(Vuex);
 export const store = new Vuex.Store({
-  state: function () {
-    return {
-      isClosed: false,
-      menuItemClick: -1,
-    };
-  },
-  mutations: {
-    toggleIsClosed(state) {
-      localStorage.setItem("isClosed", `${!state.isClosed}`);
-      state.isClosed = !state.isClosed;
-    },
-    setIsClosed(state, payload) {
-      state.isClosed = payload.isClosed;
-    },
-    increaseMenuItemClick(state) {
-      state.menuItemClick++;
-    },
-  },
   modules: {
     table: tableModule,
+    modal: modalModule,
+    sidebar: sidebarModule,
+    pages: pagesModule,
   },
 });

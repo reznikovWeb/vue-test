@@ -4,8 +4,8 @@
       :class="{ link: true, isClosed: $store.state.isClosed }"
       :to="item.to"
     >
-      <Icon :name="item.icon" class="img" />
-      <span class="title">{{ item.title }}</span>
+      <Icon :name="item.icon" class="link__img" />
+      <span class="link__title">{{ item.title }}</span>
     </router-link>
   </li>
 </template>
@@ -39,27 +39,27 @@ export default {
   &:hover {
     background-color: rgba(#ffffff, 0.2);
   }
+
+  &__title {
+    margin-left: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &__img {
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+    fill: white;
+    flex-shrink: 0;
+  }
 }
 
 .link.isClosed {
   .title {
     display: none;
   }
-}
-
-.title {
-  margin-left: 15px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.img {
-  width: 25px;
-  height: 25px;
-  object-fit: cover;
-  fill: white;
-  flex-shrink: 0;
 }
 
 .router-link-exact-active {

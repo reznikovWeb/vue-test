@@ -1,5 +1,7 @@
 <template>
-  <div>Количество переходов: {{ this.$store.state.menuItemClick }}</div>
+  <div>
+    Общее количество переходов: {{ this.$store.state.pages.menuItemClick }}
+  </div>
 </template>
 
 <script>
