@@ -2,13 +2,13 @@
   <div
     class="modal"
     v-if="$store.state.modal.isOpen"
-    @click="$store.commit('setIsOpenClose')"
+    @click="$store.commit('setIsOpen', false)"
   >
     <div class="modal__content" @click.stop>
       <p class="modal__title">
         <span>Модальное окно</span>
-        <button class="modal__btn" @click="$store.commit('setIsOpenClose')">
-          <Icon class="modal__icon" name="close" />
+        <button class="modal__btn" @click="$store.commit('setIsOpen', false)">
+          <IconClose class="modal__icon" name="close" />
         </button>
       </p>
       <p>Индекс: {{ $store.state.modal.index }}</p>
@@ -17,9 +17,9 @@
 </template>
 
 <script>
-import Icon from "@/components/Icon/Icon";
+import IconClose from "@/components/Icons/IconClose";
 export default {
-  components: { Icon },
+  components: { IconClose },
   name: "Modal",
 };
 </script>

@@ -10,9 +10,9 @@
 </template>
 
 <script>
-import Header from "@/components/Header/Header";
-import Navbar from "@/components/Sidebar/Sidebar";
-import Modal from "@/components/Modal/Modal";
+import Header from "@/components/Header";
+import Navbar from "@/components/Sidebar";
+import Modal from "@/components/Modal";
 import MainPage from "@/pages/Main/Main";
 import "./styles/index.scss";
 

@@ -2,22 +2,18 @@
   <li>
     <router-link
       :class="{ link: true, isClosed: $store.state.isClosed }"
-      :to="item.to"
+      :to="to"
     >
-      <Icon :name="item.icon" class="link__img" />
-      <span class="link__title">{{ item.title }}</span>
+      <component class="link__img" :is="icon"></component>
+      <span class="link__title">{{ title }}</span>
     </router-link>
   </li>
 </template>
 
 <script>
-import Icon from "@/components/Icon/Icon";
 export default {
-  components: {
-    Icon,
-  },
   name: "SidebarItem",
-  props: ["item"],
+  props: ["title", "to", "icon"],
 };
 </script>
 

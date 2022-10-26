@@ -6,12 +6,11 @@ export const modalModule = {
     };
   },
   mutations: {
-    setIsOpenTrue(state, payload) {
-      state.isOpen = true;
-      state.index = payload.index;
+    setIsOpen(state, payload) {
+      state.isOpen = payload;
     },
-    setIsOpenClose(state) {
-      state.isOpen = false;
+    setIndex(state, payload) {
+      state.index = payload;
     },
   },
 };

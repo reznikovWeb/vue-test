@@ -10,7 +10,7 @@
     <tbody>
       <tr
         v-for="(columnItem, index) in $store.state.table.data"
-        @click="$store.commit('setIsOpenTrue', { index })"
+        @click="openModal(index)"
         :key="columnItem.guid"
       >
         <td
@@ -28,6 +28,12 @@
 <script>
 export default {
   name: "Table",
+  methods: {
+    openModal(index) {
+      this.$store.commit("setIsOpen", true);
+      this.$store.commit("setIndex", index);
+    },
+  },
   mounted() {
     this.$store.commit("increaseMenuItemClick");
   },

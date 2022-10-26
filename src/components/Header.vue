@@ -1,19 +1,21 @@
 <template>
   <div class="header">
     <button class="header__btn" @click="$store.commit('toggleIsClosed')">
-      <Icon class="header__iconBtn" name="menu" />
+      <IconMenu class="header__iconBtn" name="menu" />
     </button>
 
-    <Icon class="header__icon" name="vue" />
+    <IconVue class="header__icon" name="vue" />
     <span class="header__title">Тестовое задание</span>
   </div>
 </template>
 
 <script>
-import Icon from "@/components/Icon/Icon";
+import IconMenu from "@/components/Icons/IconMenu";
+import IconVue from "@/components/Icons/IconVue";
 export default {
   components: {
-    Icon,
+    IconMenu,
+    IconVue,
   },
   name: "Header",
 };
