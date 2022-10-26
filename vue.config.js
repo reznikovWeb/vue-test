@@ -3,7 +3,6 @@ const path = require("path");
 const vueSrc = "./src";
 
 module.exports = defineConfig({
-  publicPath: "/vue-test/",
   transpileDependencies: true,
   configureWebpack: {
     resolve: {
